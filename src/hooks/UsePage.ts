@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { useEffect, useState } from "react";
 
 type PageState = {
     page: string;
@@ -42,3 +43,12 @@ export const usePage = create<PageState>()(
         }
     )
 )
+
+export const UseHasHydrated = () => {
+    const [hasHydrated, setHasHydrated] = useState(false);
+
+    useEffect(() => {
+        setHasHydrated(true); // Set to true after the first render
+    }, []);
+    return hasHydrated;
+}; // Export the store for easier access
