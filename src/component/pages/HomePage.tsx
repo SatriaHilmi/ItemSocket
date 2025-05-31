@@ -12,7 +12,7 @@ export const HomePage = () => {
                     <TextIn text="Hello, I'm Satria" />
                     {/* <h1 className="text-6xl font-bold text-gray-800 mb-4">Hello, I'm Satria</h1> */}
                     <p className="text-xl text-gray-600 mb-8">This is my personal web profile.</p>
-                    <button className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300" onClick={() => setPage('project')}>
+                    <button className="px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition duration-300 shadow-lg" onClick={() => setPage('project')}>
                         Project
                     </button>
                 </div>
