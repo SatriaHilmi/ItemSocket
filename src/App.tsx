@@ -4,6 +4,9 @@ import { usePage } from './hooks/UsePage'
 import { Navbar } from './component/Navbar';
 import { HomePage } from './component/pages/HomePage';
 import { UseHasHydrated } from './hooks/UsePage';
+import { Profile } from './component/pages/Profile';
+import { Project } from './component/pages/Project';
+// import { useNavbar } from './hooks/useNavbar';
 
 function App() {
   const { page } = usePage();
@@ -17,9 +20,9 @@ function App() {
       case 'home':
         return <HomePage />;
       case 'project':
-        return <p>Project</p>;
+        return <Project />;
       case 'profile':
-        return <p>profile</p>;
+        return <Profile />;
       default:
         return <HomePage />;
     }
