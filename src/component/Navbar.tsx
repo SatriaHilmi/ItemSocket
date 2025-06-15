@@ -19,7 +19,7 @@ export const Navbar = () => {
                                     setPage(page);
                                     setActive(page);
                                 }}
-                                className={`text-black hover:text-gray-200 cursor-pointer ${active === page ? 'font-bold border-b-2 border-green-700/70' : ''}`}
+                                className={`text-black hover:text-gray-200 cursor-pointer ${active === page ? 'font-bold border-b-2 font-mono border-green-700/70' : 'font-mono'}`}
                             >
                                 {page.charAt(0).toUpperCase() + page.slice(1)}
                             </li>
