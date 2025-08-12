@@ -10,7 +10,7 @@ export const TypeText: React.FC<TypeTextProps> = ({ text, speed = 100 }) => {
 
     useEffect(() => {
         let index = 0;
-        setDisplayText(""); // Reset teks sebelum mulai
+        setDisplayText("");
         const interval = setInterval(() => {
             if (index < text.length) {
                 setDisplayText((prev) => prev + text.charAt(index));
@@ -26,7 +26,7 @@ export const TypeText: React.FC<TypeTextProps> = ({ text, speed = 100 }) => {
     return (
         <h1 className="text-6xl font-bold font-mono text-black mb-4">
             {displayText}
-            <span className="animate-pulse">|</span>
+            <span className="ml-1 border-r-4 border-green-800 animate-pulse"></span>
         </h1>
     );
 };
