@@ -1,24 +1,26 @@
 import { PopUpOnLoad } from "../PopUpOnLoad";
-import { TypeText } from "../TypeText";
+// import { TypeText } from "../TypeText";
 import { usePage } from "../../hooks/UsePage";
 import { useNavbar } from "../../hooks/useNavbar";
 import { Button } from "@/components/ui/button";
 import { PopUpCard } from "../PopUpCard";
 import { useState } from "react";
 import { CardBodyOne } from "../CardBodyOne";
+import { CardBodyTwo } from "../CardBodyTwo";
+import { CardBodyThree } from "../CardBodyThree";
 // import { Dynamic } from "../Dynamic";
 
 export const HomePage = () => {
     const { setPage } = usePage();
     const { setActive } = useNavbar();
-    const [isOpen, setIsOpen] = useState(false);
+    const [OpenCard, setIsOpenCard] = useState<string | null>(null);
     return (
         <>
             <div className="flex items-center justify-center h-screen w-full bg-gradient-to-b from-green-500 to-white">
                 <div className="flex flex-col items-center text-center">
                     <PopUpOnLoad message="Welcome Dude!" />
-                    <TypeText text="Hello Satria!" speed={100} />
-                    {/* <h1 className="text-6xl font-bold text-gray-800 mb-4">Hello, I'm Satria</h1> */}
+                    {/* <TypeText text="Hello Satria!" speed={100} /> */}
+                    <h2 className="text-4xl font-bold text-gray-800 mb-4">Hai, I am Satria Hilmi An'amta Cahyono</h2>
                     <p className="text-xl text-gray-600 mb-8">This is my personal web profile.</p>
                     <button className="px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition duration-300 shadow-lg cursor-pointer" onClick={() => { setPage('project'); setActive('project'); }}>
                         Project
@@ -43,47 +45,37 @@ export const HomePage = () => {
                     <div className="p-5">
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Graduated Junior High School at SMPN 10 Probolinggo 2019</h5>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-500">Similar to a gifted student who pursued his potential, he started an organization to become a certified student at school.</p>
-                        <Button variant="ghost" className="cursor-pointer" onClick={() => setIsOpen(true)}>Read More</Button>
-                        <PopUpCard isOpen={isOpen} onClickClose={() => setIsOpen(false)} title="Graduated junior high school at SMPN 10 Probolinggo 2019">
+                        <Button variant="ghost" className="cursor-pointer" onClick={() => setIsOpenCard("smp")}>Read More</Button>
+                        <PopUpCard isOpen={OpenCard === "smp"} onClickClose={() => setIsOpenCard(null)} title="Graduated junior high school at SMPN 10 Probolinggo 2019">
                             <CardBodyOne />
                         </PopUpCard>
-                        {/* <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </a> */}
                     </div>
                 </div>
                 <div className="max-w-sm">
                     <div className="p-5">
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Graduated Senior High School at SMAN 3 Probolinggo 2022</h5>
-                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-500">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                        <Button variant="ghost" className="cursor-pointer" onClick={() => setIsOpen(true)}>Read More</Button>
-                        {/* <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </a> */}
+                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-500">From junior high school to high school, I studied diligently and diligently, allowing me to compete with my peers.</p>
+                        <Button variant="ghost" className="cursor-pointer" onClick={() => setIsOpenCard("sma")}>Read More</Button>
+                        <PopUpCard isOpen={OpenCard === "sma"} onClickClose={() => setIsOpenCard(null)} title="Graduated senior high school at SMAN 3 Probolinggo 2022">
+                            <CardBodyTwo />
+                        </PopUpCard>
                     </div>
                 </div>
                 <div className="max-w-sm">
-                    <a href="#">
-                        <img className="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-                    </a>
                     <div className="p-5">
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Noteworthy technology acquisitions 2021</h5>
-                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-500">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                        <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </a>
+                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Graduated Diploma at State Polytechnic of Jember</h5>
+                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-500">After graduating from high school, I continued my studies at State Poltytechnic of Jember, in the Informatics Engineering program.</p>
+                        <Button variant="ghost" className="cursor-pointer" onClick={() => setIsOpenCard("kuliah")}>Read More</Button>
+                        <PopUpCard isOpen={OpenCard === "kuliah"} onClickClose={() => setIsOpenCard(null)} title="Graduated diploma at State Polytechnic of Jember">
+                            <CardBodyThree />
+                        </PopUpCard>
                     </div>
                 </div>
             </div>
+
+            <hr className="w-1/2 mb-5 border-2 mx-auto border-green-500 rounded-full" />
+
+
         </>
     );
 }
