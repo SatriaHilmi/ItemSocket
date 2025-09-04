@@ -11,6 +11,11 @@ const projects = [
         description: "This is the description for Project Two. It is a web application that helps users manage their tasks and improve productivity.",
         imageUrl: "./assets/CatDev.jpg"
     },
+    {
+        title: "Project Three",
+        description: "This is the description for Project Two. It is a web application that helps users manage their tasks and improve productivity.",
+        imageUrl: "./assets/keyboard.jpg"
+    },
 ]
 
 
@@ -41,7 +46,7 @@ export const Project = () => {
                     </div>
                 </div>
             </section>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-5 mb-10 mt-15">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-5 mb-10 mt-15 gap-y-5">
                 {projects.map((project, index) => (
                     <div key={index} className="flex justify-center">
                         <CardProject

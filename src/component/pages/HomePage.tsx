@@ -8,12 +8,37 @@ import { useState } from "react";
 import { CardBodyOne } from "../CardBodyOne";
 import { CardBodyTwo } from "../CardBodyTwo";
 import { CardBodyThree } from "../CardBodyThree";
+import { FaLaravel, FaReact, FaNodeJs, FaVuejs, FaPhp, FaCss3Alt, FaHtml5, FaBootstrap } from "react-icons/fa";
+import { SiTailwindcss, SiTypescript, SiJavascript, SiMongodb, SiMysql, SiPrisma, SiSqlite, SiExpress } from "react-icons/si";
 // import { Dynamic } from "../Dynamic";
 
 export const HomePage = () => {
     const { setPage } = usePage();
     const { setActive } = useNavbar();
     const [OpenCard, setIsOpenCard] = useState<string | null>(null);
+
+    const techStack = [
+        <FaLaravel className="text-6xl text-white" />,
+        <FaReact className="text-6xl text-white" />,
+        <FaNodeJs className="text-6xl text-white" />,
+        <FaBootstrap className="text-6xl text-white" />,
+        <SiExpress className="text-6xl text-white" />,
+        <span className="text-4xl font-bold text-white">Tech Stack</span>,
+        <FaVuejs className="text-6xl text-white" />,
+        <SiTailwindcss className="text-6xl text-white" />,
+        <SiTypescript className="text-6xl text-white" />,
+        <SiJavascript className="text-6xl text-white" />,
+        <SiMongodb className="text-6xl text-white" />,
+        <SiMysql className="text-6xl text-white" />,
+        <span className="text-4xl font-bold text-white">Tech Stack</span>,
+        <SiPrisma className="text-6xl text-white" />,
+        <FaPhp className="text-6xl text-white" />,
+        <SiSqlite className="text-6xl text-white" />,
+        <FaCss3Alt className="text-6xl text-white" />,
+        <FaHtml5 className="text-6xl text-white" />,
+        <span className="text-4xl font-bold text-white">Tech Stack</span>,
+    ];
+
     return (
         <>
             <div className="flex items-center justify-center h-screen w-full bg-gradient-to-b from-green-500 to-white">
@@ -73,8 +98,22 @@ export const HomePage = () => {
                 </div>
             </div>
 
-            <hr className="w-1/2 mb-5 border-2 mx-auto border-green-500 rounded-full" />
+            {/* <hr className="w-1/2 mb-5 border-2 mx-auto border-green-500 rounded-full" /> */}
 
+            <div className="flex justify-center items-center mb-5 pt-10 space-x-4">
+                <div className="w-full overflow-hidden bg-green-500 py-5">
+                    <div className="animate-marquee flex items-center space-x-12">
+                        {[...techStack, ...techStack].map((item, idx, arr) => (
+                            <div key={idx} className="flex items-center space-x-12">
+                                {item}
+                                {idx !== arr.length - 1 && ( // kasih dot kecuali terakhir
+                                    <span className="text-white text-4xl">•</span>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
 
         </>
     );
