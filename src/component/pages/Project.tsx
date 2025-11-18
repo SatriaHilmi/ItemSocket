@@ -46,7 +46,7 @@ export const Project = () => {
                     </div>
                 </div>
             </section>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-5 mb-10 mt-15 gap-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-5 mb-10 mt-20 gap-y-10">
                 {projects.map((project, index) => (
                     <div key={index} className="flex justify-center">
                         <CardProject
