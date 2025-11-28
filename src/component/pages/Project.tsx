@@ -22,10 +22,10 @@ const projects = [
 export const Project = () => {
     return (
         <>
-            <div className="flex items-center justify-center h-screen w-full bg-gradient-to-b from-green-500 to-white">
+            <div className="flex items-center justify-center h-screen w-full bg-gradient-to-b from-black via-gray-900">
                 <div className="flex flex-col items-center text-center">
-                    <h1 className="text-6xl font-bold text-gray-800 mb-4">The Project!</h1>
-                    <p className="text-xl text-gray-600 mb-8">This is the project.</p>
+                    <h1 className="text-6xl font-bold text-white mb-4 flex gap-2.5"><span className="text-yellow-500">Portofolio</span> Project</h1>
+                    <p className="text-xl text-white mb-8">This is the project.</p>
                     {/* <button className="px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition duration-300 shadow-lg">
                         Go Back
                     </button> */}

@@ -9,11 +9,11 @@ export const Navbar = () => {
     const pages = ["home", "project", "profile"];
 
     return (
-        <nav className="top-0 left-0 right-0 bg-green-500 px-6 py-3 z-50">
+        <nav className="top-0 left-0 right-0 bg-black px-6 py-3 z-50">
             <div className="grid grid-cols-2 md:grid-cols-3 items-center w-full">
 
                 {/* Title (kiri) */}
-                <h2 className="text-3xl font-bold font-mono">Biograph</h2>
+                <h2 className="text-3xl font-bold font-mono font-jersey text-white">Biograph</h2>
 
                 {/* Logo (tengah) */}
                 <img
@@ -26,7 +26,7 @@ export const Navbar = () => {
                 <div className="flex justify-end items-center gap-4">
                     {/* Hamburger (mobile) */}
                     <button
-                        className="md:hidden text-black"
+                        className="md:hidden text-white"
                         onClick={() => setOpen(!open)}
                     >
                         <div className="space-y-[6px]">
@@ -37,7 +37,7 @@ export const Navbar = () => {
                     </button>
 
                     {/* Menu desktop */}
-                    <ul className="hidden md:flex gap-4 bg-green-600 px-5 py-2 rounded-full shadow-lg shadow-black/30">
+                    <ul className="hidden md:flex gap-4 bg-white px-5 py-2 rounded-full shadow-lg shadow-black/30 font-jersey">
                         {pages.map((page) => (
                             <li
                                 key={page}
@@ -45,7 +45,7 @@ export const Navbar = () => {
                                     setPage(page);
                                     setActive(page);
                                 }}
-                                className={`cursor-pointer text-black hover:text-gray-200 font-mono ${active === page
+                                className={`cursor-pointer text-black hover:text-yellow-500 font-jersey ${active === page
                                     ? "font-bold border-b-2 border-green-800"
                                     : ""
                                     }`}
@@ -68,7 +68,7 @@ export const Navbar = () => {
                                 setActive(page);
                                 setOpen(false);
                             }}
-                            className={`cursor-pointer text-black hover:text-gray-200 font-mono ${active === page
+                            className={`cursor-pointer text-black hover:text-yellow-500 font-jersey ${active === page
                                 ? "font-bold border-b-2 border-green-800"
                                 : ""
                                 }`}

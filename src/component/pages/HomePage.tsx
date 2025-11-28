@@ -40,20 +40,20 @@ export const HomePage = () => {
     return (
         <>
             {/* HERO SECTION */}
-            <div className="flex items-center justify-center min-h-screen w-full bg-gradient-to-b from-green-500 to-white px-6">
+            <div className="flex items-center justify-center min-h-screen w-full bg-gradient-to-b from-black via-gray-900 px-6">
                 <div className="flex flex-col items-center text-center">
                     <PopUpOnLoad message="Welcome!" />
 
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
-                        Hai, I am Satria Hilmi An'amta Cahyono
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight font-jersey">
+                        <span className="inline-flex mr-2 text-yellow-500">Hi,</span>I am Satria Hilmi An'amta Cahyono
                     </h2>
 
-                    <p className="text-lg md:text-xl text-gray-600 mb-8">
+                    <p className="text-xl md:text-2xl text-white mb-8 font-jersey">
                         This is my personal web profile.
                     </p>
 
                     <button
-                        className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition duration-300 shadow-lg cursor-pointer"
+                        className="px-6 py-3 bg-white text-black rounded-full hover:bg-gray-500 transition duration-300 shadow-lg cursor-pointer"
                         onClick={() => { setPage("project"); setActive("project"); }}
                     >
                         Project
@@ -62,8 +62,8 @@ export const HomePage = () => {
             </div>
 
             {/* QUOTE SECTION */}
-            <section className="relative bg-center bg-no-repeat bg-cover bg-[url('./assets/tree_un.jpg')] mb-4">
-                <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-700/20 to-white"></div>
+            <section className="relative bg-center bg-no-repeat bg-cover bg-[url('./assets/Earth2.jpg')] mb-4 mt-10">
+                <div className="absolute inset-0 bg-gradient-to-b via-gray-700/20 to-white"></div>
 
                 <div className="relative px-4 mx-auto max-w-screen-xl text-center py-20 md:py-48">
                     <h1 className="text-2xl md:text-5xl font-extrabold font-mono text-white italic leading-relaxed">
@@ -125,7 +125,7 @@ export const HomePage = () => {
             </div>
 
             {/* TECH STACK MARQUEE */}
-            <div className="w-full bg-green-500 py-4 overflow-hidden">
+            <div className="w-full bg-black py-4 overflow-hidden">
                 <div className="animate-marquee flex items-center space-x-10 md:space-x-16">
                     {[...techStack, ...techStack].map((item, idx) => (
                         <div key={idx} className="flex items-center space-x-10">
@@ -133,6 +133,34 @@ export const HomePage = () => {
                             <span className="text-white text-3xl md:text-4xl">•</span>
                         </div>
                     ))}
+                </div>
+            </div>
+
+            <div className="mt-10 text-4xl md:text-2xl font-bold px-5 font-jersey">
+                <h1 className="flex gap-2 text-5xl"><span className="text-yellow-500">Featured</span>Project</h1>
+            </div>
+            <div className="w-full mx-auto px-5 py-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 text-center gap-5 justify-items-center">
+                    <div className="bg-white rounded-lg shadow-lg p-5 max-w-lg w-full">
+                        <img src="./assets/CatDev.jpg" alt="" className="w-full h-48 object-cover rounded-lg mb-5" />
+                        <h3 className="text-2xl font-semibold mb-2">Items Socket</h3>
+                        <p className="text-gray-600 text-lg">Contoh saja</p>
+                    </div>
+                    <div className="bg-white rounded-lg shadow-lg p-5 max-w-lg w-full">
+                        <img src="./assets/CatDev.jpg" alt="" className="w-full h-48 object-cover rounded-lg mb-5" />
+                        <h3 className="text-2xl font-semibold mb-2">Items Socket</h3>
+                        <p className="text-gray-600 text-lg">Contoh saja</p>
+                    </div>
+                    <div className="bg-white rounded-lg shadow-lg p-5 max-w-lg w-full">
+                        <img src="./assets/CatDev.jpg" alt="" className="w-full h-48 object-cover rounded-lg mb-5" />
+                        <h3 className="text-2xl font-semibold mb-2">Items Socket</h3>
+                        <p className="text-gray-600 text-lg">Contoh saja</p>
+                    </div>
+                    <div className="bg-white rounded-lg shadow-lg p-5 max-w-lg w-full">
+                        <img src="./assets/CatDev.jpg" alt="" className="w-full h-48 object-cover rounded-lg mb-5" />
+                        <h3 className="text-2xl font-semibold mb-2">Items Socket</h3>
+                        <p className="text-gray-600 text-lg">Contoh saja</p>
+                    </div>
                 </div>
             </div>
         </>
